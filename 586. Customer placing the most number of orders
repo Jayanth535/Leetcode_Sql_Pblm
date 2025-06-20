@@ -1,0 +1,20 @@
+Write a solution to find the customer_number for the customer who has placed the largest number of orders.
+Solution:
+select customer_number from Orders group by customer_number order by count(customer_number) desc limit 1; 
+
+Input: 
+Orders table:
++--------------+-----------------+
+| order_number | customer_number |
++--------------+-----------------+
+| 1            | 1               |
+| 2            | 2               |
+| 3            | 3               |
+| 4            | 3               |
++--------------+-----------------+
+Output: 
++-----------------+
+| customer_number |
++-----------------+
+| 3               |
++-----------------+
